@@ -1,0 +1,180 @@
+@charset "utf-8";
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+html,body{width:100%; height:100%;}
+section{width:100%; height:100vh;}
+h2{margin:40px 0px 0px 60px;}
+img{object-fit:cover; resize:none; height:100%; width:100%;}
+#wrap{position:fixed; left:0px; top:0px; width:100vw;}
+nav,h3,p,section,h2,ul,li,body{margin: 0; padding: 0;}
+#gnb{
+    position: fixed; left: 0; top: 0; z-index: 500;
+    width: 100%; height: 60px; background-color:rgba(0,0,0,0.3);
+}
+#gnb>ul{
+    display: flex; justify-content:center;
+    align-items:center; gap: 20px;
+}
+#gnb>ul>li>a{
+    display: block; color: #fff; line-height: 60px;
+    padding: 0px 10px; font-weight: bold; font-size: 18px;
+    transition:all .2s;
+}
+#gnb>ul>li:hover>a{
+    color: #03f;
+}
+#snb{
+    position:fixed; z-index:999; right:25px; top:50%; transform:translateY(-50%);
+}
+#snb>ul{
+    display: flex; flex-flow:column nowrap; gap: 20px;
+}
+#snb>ul>li>a>.navi{
+    display: block; width: 13px; height: 13px; background: #fff; border: 3px solid #090909; transition:all .3s;
+}
+#snb>ul>li>a.on>.navi{
+    background:firebrick; transform:rotate(45deg);
+}
+.more{
+    position: fixed; left: 50%; top: 50%; transform:translate(-50%,-50%);
+    display: flex; flex-direction:column; justify-content: center; align-items: center;
+}
+.more>p{
+    font-family:'Dancing Script',sans-serif;
+    font-size: 3rem; color: #090909;
+}
+.more>a{
+    display: block; font-size:2rem; color: #fff;
+    background-color:rgba(0,0,0,0.5);
+}
+.detail{
+    width: 100%; height: 100vh;
+    position: fixed; left:0; top: 0; z-index: 1000;
+    background-color:rgba(0,0,0,0.8);
+    display: flex; justify-content: center; align-items: center;
+    flex-flow:column nowrap; text-align: center;
+    color: #fff; display: none;
+}
+.detail>h2{
+    font-size: 2.6rem;
+    border-bottom: 2px solid #fc7;
+    margin-bottom: 20px;
+}
+.detail>div{
+    margin-bottom: 20px;
+}
+.detail>div>h3{
+    font-size: 1.5rem;
+    color: #fc0;
+}
+.detail>div>p{
+    font-size: 1.25rem;
+}
+.detail>.reservation{
+    font-size: 2rem; background: #2b2;
+    color: #fff; display: block;
+    padding:5px 10px; border-radius: 20px;
+    font-weight: bold;
+}
+.detail>.close{
+    display: block; color:#090909; font-size: 2rem;
+    padding: 10px 20px; background-color: #fff;
+    position: absolute; right: 0;top: 0;
+}
+.hidden{
+    overflow: hidden;
+}
+#gnb>ul>li>.active{
+    color: #03f;
+}
+.form-group{
+    margin-bottom: 14px;
+}
+label{display: block; margin-bottom: 6px;}
+input,select{
+    box-sizing: border-box; width: 100%; padding: 8px;
+}
+button{
+    background-color: #4caf60; color: #fff; padding: 10px 15px;
+    border: 0px none; cursor: pointer;
+}
+button:hover{
+    background-color: #45a059;
+}
+button.cancel{
+    background-color:#ff3300;
+}
+button.cancel:hover{
+    background-color:#ee2200;
+}
+.confirmed{
+    width: 100%; height: 100vh; position: fixed;
+    left: 0; top: 0; z-index: 6000;
+    background-color:rgba(0,0,0,0.8); display: flex;
+    justify-content: center; align-items: center;
+    display: none;
+}
+.confirmed>#result{ /* 여기는 예쁘게 수정해보기 */
+    padding:10px 20px; border: 1px solid #ddd;
+    background-color: #ededed; display: none;
+    border-radius: 20px;
+}
+.confirmed>#result>h2{
+    font-size: 2rem;
+}
+.confirmed>#result>p{
+    margin-top: 10px;
+}
+.confirmed>#result>button{
+    background-color:#090909;
+    margin:20px auto 0px; display: block;
+}
+.date-input{
+    cursor: pointer; background-color: #f2f3f5;
+    border: 0px none;
+}
+.resPage{
+    position:fixed; left:0; top: 0;
+    width:100%; height: 100vh; z-index: 5000;
+    background-color:rgba(0,0,0,0.8); display: flex;
+    justify-content: center; align-items: center;
+    display: none;
+}
+.resPage>.inner{
+    background-color: #fff;
+    padding: 10px 30px; border-radius: 30px;
+}
+.resPage h1{
+    font-size: 2.5rem;
+}
+@media screen and (min-width:768px){
+    section{width:100%; height:100vh; overflow:hidden;}
+    .more>p{
+        font-size: 3.8rem;
+    }
+    .detail>h2{
+        font-size: 3.2rem;
+    }
+    .detail>div>h3{
+        font-size: 2rem;
+        color: #fc0;
+    }
+    .detail>div>p{
+        font-size: 1.8rem;
+    }
+    .detail>.close{
+        font-size: 2.8rem;
+    }
+    .detail>.reservation{
+        font-size: 3rem;
+    }
+    #gnb>ul{
+        gap: 50px;
+    }
+    .resPage h1{
+        font-size: 3.5rem;
+    }
+    .confirmed>#result>h2{
+        font-size: 2.5rem;
+    }
+}
